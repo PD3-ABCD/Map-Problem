@@ -114,9 +114,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
         //stop location updates
-       /* if (mGoogleApiClient != null) {
+        if (mGoogleApiClient != null) {
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,this);
-        }*/
+        }
     }
 
     @Override
@@ -129,7 +129,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
-            //LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,this);
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,this);
         }
     }
 
